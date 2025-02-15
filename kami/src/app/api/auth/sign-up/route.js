@@ -61,7 +61,9 @@ export async function POST(req) {
       JSON.stringify({ message: `User of ${role} created successfully` }),
       { status: 201 }
     );
-  } catch (error) {
+  } 
+  
+  catch (error) {
     return new Response(JSON.stringify({ error: "Server error" }), {
       status: 500,
     });

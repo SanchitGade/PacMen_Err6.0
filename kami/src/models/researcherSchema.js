@@ -9,6 +9,7 @@ const researcherSchema = new mongoose.Schema({
   researchPapers: [
     {
       title: String,
+      field: String,
       description: String,
       fileUrl: String,
     },

@@ -1,0 +1,118 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.form {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.title h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.title p {
+  margin: 10px 0 0;
+  color: #666;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color:#110505;
+  font-size: 16px;
+}
+
+.roleContainer {
+  margin: 20px 0;
+}
+
+.titleText {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.subText {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.buttonContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.roles {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.roles:hover {
+  border-color: #666;
+}
+
+.roles.selected {
+  border-color: #4a90e2;
+  background: #f0f7ff;
+}
+
+.error-message {
+  color: #e53e3e;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #fff5f5;
+  border-radius: 5px;
+}
+
+.button-confirm {
+  width: 100%;
+  padding: 12px;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button-confirm:hover {
+  background: #357abd;
+}
+
+.button-confirm:disabled {
+  background: #93c4f5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .form {
+    padding: 20px;
+  }
+  
+  .buttonContainer {
+    grid-template-columns: 1fr;
+  }
+}
