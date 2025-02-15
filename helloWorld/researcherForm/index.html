@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Researcher Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="researcher-container">
+        <h2>Researcher Details</h2>
+        <p>Fill in the details to proceed.</p>
+
+        <form id="researcherForm">
+            <!-- Patents Owned -->
+            <label for="patents">Number of Patents Owned:</label>
+            <input type="number" id="patents" name="patents" placeholder="Enter number of patents" required>
+
+            <!-- Research Stage -->
+            <label for="stage">Stage of Research:</label>
+            <select id="stage" name="stage">
+                <option value="Early">Early Stage</option>
+                <option value="Mid">Mid Stage</option>
+                <option value="Advanced">Advanced Stage</option>
+            </select>
+
+            <!-- Funding Type -->
+            <label for="funding">Type of Funding Needed:</label>
+            <select id="funding" name="funding">
+                <option value="Seed">Seed Funding</option>
+                <option value="Government Grant">Government Grant</option>
+                <option value="VC">Venture Capital</option>
+                <option value="Corporate Sponsorship">Corporate Sponsorship</option>
+            </select>
+
+            <!-- Research Field -->
+            <label for="field">Research Field:</label>
+            <select id="field" name="field">
+                <option value="AI">Artificial Intelligence</option>
+                <option value="Biotech">Biotechnology</option>
+                <option value="Clean Energy">Clean Energy</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <!-- Collaboration Requirement -->
+            <label>Do you need collaborations?</label>
+            <div class="radio-group">
+                <input type="radio" id="collabYes" name="collaboration" value="Yes">
+                <label for="collabYes">Yes</label>
+                <input type="radio" id="collabNo" name="collaboration" value="No">
+                <label for="collabNo">No</label>
+            </div>
+
+            <!-- Additional Details -->
+            <label for="details">Additional Information:</label>
+            <textarea id="details" name="details" rows="4" placeholder="Describe your research needs..."></textarea>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>

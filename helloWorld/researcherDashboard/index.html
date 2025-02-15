@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>researcherDashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<!-- navbar -->
+
+<div class="navBar">
+
+    <div class="logo">LOGO</div>
+
+    <div class="pfpDiv"></div>
+
+
+</div>
+
+
+<!-- dashboard -->
+
+
+<div class="dashboardContainer">
+
+    <div class="dashboardNav">
+            <button onclick="showList('startup')">Show Startup</button>
+            <button onclick="showList('mentor')">Show Mentor</button>
+            <button onclick="showList('investor')">Show Investor</button>
+    </div>
+
+
+    <div id="researcher-list" class="researcher-container"></div>
+
+    <script>
+        function showList(type) {
+            const colors = { startup: 'startup-card', mentor: 'mentor-card', investor: 'investor-card' };
+            const researchers = [
+                { name: "John Doe", patents: 5, ongoing: 2, wantsFunding: true, type: "startup" },
+                { name: "Jane Smith", patents: 3, ongoing: 4, wantsFunding: false, type: "mentor" },
+                { name: "Alice Brown", patents: 2, ongoing: 1, wantsFunding: true, type: "investor" }
+            ];
+            
+            const listContainer = document.getElementById("researcher-list");
+            listContainer.innerHTML = "";
+            
+            researchers.filter(r => r.type === type).forEach(researcher => {
+                const card = `
+                    <div class="researcher-card ${colors[type]}">
+                        <img class="profile-pic" src="default-pfp.png" alt="${researcher.name}" />
+                        <div class="card-info">
+                            <h3>${researcher.name}</h3>
+                            <p>Patents: ${researcher.patents}</p>
+                            <p>Ongoing Researches: ${researcher.ongoing}</p>
+                        </div>
+                        ${researcher.wantsFunding ? '<span class="funding-badge">Funding Needed</span>' : ''}
+                    </div>
+                `;
+                listContainer.innerHTML += card;
+            });
+        }
+    </script>
+</div>
+
+
+
+</body>
+</html>

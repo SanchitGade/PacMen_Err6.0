@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup & Role Selection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Sign Up Form -->
+    <div class="container" id="signupForm">
+        <form class="form" id="signUp">
+            <div class="title">
+                <h1>Welcome</h1>
+                <p>Sign up to continue</p>
+            </div>
+            <input class="input" id="email" name="email" placeholder="Email" type="email" required>
+            <input class="input" id="password" name="password" placeholder="Password" type="password" required>
+            <button type="button" class="button-confirm" id="signUpBtn">Sign Up</button>
+        </form>
+    </div>
+
+    <!-- Role Selection Form (Initially Hidden) -->
+    <div class="roleContainer" id="roleSelection" style="display: none;">
+        <div class="titleText">Who are you?</div>
+        <div class="subText">Please Select your role to proceed.</div>
+        <div class="buttonContainer">
+            <button class="roles" id="researcher">Researcher</button>
+            <button class="roles" id="entrepreneur">Entrepreneur</button>
+            <button class="roles" id="investor">Investor</button>
+            <button class="roles" id="policyMaker">Policy Maker</button>
+        </div>
+        <button class="roleSubmitButton" id="submitRole">Submit</button>
+    </div>
+
+    <script>
+        let userData = {}; // Object to store user data
+
+        // Sign-Up Button Click Event
+        document.getElementById("signUpBtn").addEventListener("click", function () {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            if (!email || !password) {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            userData.email = email;
+            userData.password = password;
+
+            // Hide Sign-Up Form and Show Role Selection
+            document.getElementById("signupForm").style.display = "none";
+            document.getElementById("roleSelection").style.display = "block";
+        });
+
+        let selectedRole = "";
+
+        // Role Selection Event
+        document.querySelectorAll(".roles").forEach(button => {
+            button.addEventListener("click", function () {
+                selectedRole = this.id; // Get selected role
+                document.querySelectorAll(".roles").forEach(btn => btn.classList.remove("selected"));
+                this.classList.add("selected");
+            });
+        });
+
+        // Submit Role and Send Data to Backend
+        document.getElementById("submitRole").addEventListener("click", function () {
+            if (!selectedRole) {
+                alert("Please select a role.");
+                return;
+            }
+
+            userData.role = selectedRole;
+
+            // Send Data to Backend
+            fetch("http://your-backend-url.com/api/signup", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(userData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert("Signup Successful!");
+                console.log("Server Response:", data);
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Signup Failed.");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
