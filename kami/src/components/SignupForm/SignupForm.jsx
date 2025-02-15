@@ -57,7 +57,7 @@ const SignupForm = () => {
       }
 
       // Redirect to login page after successful signup
-      router.push("/login");
+      router.push("/home");
     } catch (err) {
       setError(err.message || "An error occurred during signup");
     } finally {
@@ -111,7 +111,7 @@ const SignupForm = () => {
           <div className="titleText">Who are you?</div>
           <div className="subText">Please select your role to proceed.</div>
           <div className="buttonContainer">
-            {["Researcher", "Entrepreneur", "Investor", "Policy Maker"].map(
+            {["Researcher", "Entrepreneur", "Investor", "Mentor"].map(
               (r) => (
                 <button
                   key={r}
