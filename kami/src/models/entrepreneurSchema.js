@@ -7,22 +7,35 @@ const entrepreneurSchema = new mongoose.Schema({
   role: { type: String, default: "entrepreneur" },
 
   startupDetails: {
-    name: String,
-    description: String,
+    name: { type: String},
+    description: { type: String },
     history: String,
+    industry: String, // Industry category of the startup
+    website: String, // Startup website link
+    establishedYear: Number, // Year the startup was founded
+    location: String, // Startup location
   },
 
-  fundingRequests: [
+  fundingStatus: {
+    isLookingForFunding: { type: Boolean, default: false }, // Whether the startup is actively seeking investment
+    fundingRange: {
+      min: Number,
+      max: Number,
+    }, 
+    fundingStage: {
+      type: String,
+      enum: ["Pre-Seed", "Seed", "Series A", "Series B", "Late Stage"],
+    }, // Current funding stage of the startup
+  },
+
+  achievements: [
     {
-      amount: Number,
+      title: String,
       description: String,
-      status: { type: String, default: "pending" },
+      date: Date,
     },
-  ],
-  
-  viewedResearchPapers: [
-    { type: mongoose.Schema.Types.ObjectId, ref: "ResearchPaper" },
-  ],
+  ], // Awards, recognitions, or startup milestones
+
 });
 
 export default mongoose.models.Entrepreneur ||

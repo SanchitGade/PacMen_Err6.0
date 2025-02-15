@@ -3,7 +3,7 @@ import dbConnect from "@/lib/dbConnect";
 import Researcher from "@/models/researcherSchema";
 import Entrepreneur from "@/models/entrepreneurSchema";
 import Investor from "@/models/investorSchema";
-import PolicyMaker from "@/models/policyMakerSchema";
+import Mentor from "@/models/mentorSchema";
 import { comparePassword, generateToken } from "@/utils/auth";
 import { NextResponse } from "next/server";
 
@@ -27,7 +27,7 @@ export async function POST(req) {
       (await Researcher.findOne({ email })) ||
       (await Entrepreneur.findOne({ email })) ||
       (await Investor.findOne({ email })) ||
-      (await PolicyMaker.findOne({ email }));
+      (await Mentor.findOne({ email }));
 
     if (!user) {
       return NextResponse.json(
