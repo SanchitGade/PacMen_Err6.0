@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Slab:wght@100..900&display=swap');
+
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", serif;
+}
+
+.Navigation{
+    display: flex;
+    margin: 25px;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 5%;
+    background-color: #008080; /* Teal background color */
+    box-shadow: 6px 6px 0px 0px black; /* Add shadow for 3D effect */   
+}
+
+.nav-con-1 p {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 800;
+}
+
+.nav-con-2 ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-con-2 ul li {
+    margin: 0 15px;
+}
+
+.nav-con-2 ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.nav-con-2 ul li a:hover {
+    color: #ffcc00; /* Change color on hover */
+    font-weight: 500;
+}
+
+.nav-con-3 button {
+    background-color: #ffcc00; /* Yellow background color */
+    border-radius: 5px;
+    border: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    margin-left: 10px;
+    color: #008080; /* Teal text color */
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    /* border-bottom: 6px solid black; Add bottom border */
+    /* border-right: 6px solid black; Add right border */
+    box-shadow: 4px 4px 0px 0px black; /* Add shadow for 3D effect */
+}
+
+.nav-con-3 button:hover {
+    background-color: white; /* Darker yellow on hover */
+    transform: translate(-2px, -2px); /* Move button up and left on hover */
+    box-shadow: 4px 4px 0px 0px black; /* Adjust shadow on hover */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center; /* Center align text in the container */
+    height: 100vh; /* Occupy full viewport height */
+}
+
+.container-con-1, .container-con-2 {
+    flex: 1; /* Make both divs occupy equal width */
+    padding: 20px;
+}
+
+.container-con-2 img {
+    max-width: 100%; /* Ensure the image scales within its container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for 3D effect */
+}
+
+.container-con-1 h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #008080; /* Teal color */
+}
+
+.container-con-1 p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.container-con-1 button {
+    background-color: #008080; /* Teal background color */
+    border-radius: 5px;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 4px 4px 0px 0px black; /* Add shadow for 3D effect */
+}
+
+.container-con-1 button:hover {
+    background-color: #006666; /* Darker teal on hover */
+    transform: translate(-2px, -2px); /* Move button up and left on hover */
+    box-shadow: 4px 4px 0px 0px black; /* Adjust shadow on hover */
+}
+
+.container-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: #f4f4f9; /* Light background color */
+    text-align: center;
+    border-radius: 10px;
+    margin: 50px 50px; /* Add some margin to separate sections */
+}
+
+.container-2 div:first-child {
+    flex: 1;
+}
+
+.container-2 div:first-child img {
+    max-width: 80%; /* Scale down the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for 3D effect */
+}
+
+.container-2 div:last-child {
+    flex: 2;
+    padding: 20px;
+    background-color: #ffffff; /* White background for content */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for 3D effect */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.container-2 h2 {
+    font-size: 2rem;
+    color: #008080; /* Teal color */
+    margin-bottom: 20px;
+}
+
+.container-2 p {
+    font-size: 1.2rem;
+    line-height: 1.8; /* Add line spacing */
+    color: #333; /* Dark text color */
+    margin-bottom: 20px;
+}
+
+.container-2 div:last-child div {
+    font-size: 1.5rem;
+    color: #ffcc00; /* Yellow color */
+    font-weight: bold;
+    margin-top: 20px;
+    max-width: 50%;
+    justify-self: center;
+}
+
+.footer {
+    background-color: #008080; /* Teal background color */
+    color: #008080;
+    margin: 15px; /* Reduced margin */
+    border-radius: 10px;
+    box-shadow: 6px 6px 0px 0px black;
+    padding: 15px; /* Reduced padding */
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 20px; /* Reduced line height */
+    justify-content: space-between;
+    align-items: stretch; /* Ensure all child divs have the same height */
+    text-align: center;
+}
+
+.footer-logo, .footer-nav, .footer-contact, .footer-feedback, .footer-copy {
+    flex: 1 1 150px; /* Reduced flex-basis */
+    margin: 5px; /* Reduced margin */
+    padding: 15px 20px; /* Reduced padding */
+    background-color: #ffffff; /* White background for content */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 6px 6px 0px 0px black; /* Add shadow for 3D effect */
+    transition: transform 0.3s, box-shadow 0.3s; /* Add transition for hover effect */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav ul li {
+    margin: 3px 0; /* Reduced margin */
+}
+
+.footer-nav ul li a {
+    color: #008080;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 0.9rem; /* Reduced font size */
+}
+
+.footer-nav ul li a:hover {
+    color: #ffcc00; /* Change color on hover */
+}
+
+.footer-feedback p {
+    margin: 3px 0; /* Reduced margin */
+    font-size: 0.9rem; /* Reduced font size */
+}
+
+.footer-copy {
+    flex-basis: 100%;
+    margin-top: 15px; /* Reduced margin */
+    font-size: 0.9rem; /* Reduced font size */
+}
+
+.footer-feedback-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Add some space between the input and button */
+    margin-top: 10px;
+}
+
+.footer-feedback-input .input {
+    width: 200px; /* Reduced width */
+    height: 35px; /* Reduced height */
+    border-radius: 5px;
+    border: 2px solid black;
+    background-color: #ffcc00;
+    box-shadow: 4px 4px 0px 0px black;
+    font-size: 14px; /* Reduced font size */
+    font-weight: 600;
+    color: #008080;
+    padding: 5px 10px;
+    outline: none;
+}
+
+.footer-feedback-input .input::placeholder {
+    color: #008080;
+}
+
+.footer-feedback-input .input:focus {
+    border: 2px solid #008080;
+}
+
+.footer-feedback-input .btn {
+    background-color: #ffcc00; /* Yellow background color */
+    border-radius: 5px;
+    border: none;
+    padding: 8px 16px; /* Reduced padding */
+    border: 2px solid black;
+    color: #008080; /* Teal text color */
+    font-size: 0.9rem; /* Reduced font size */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 4px 4px 0px 0px black; /* Add shadow for 3D effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-feedback-input .btn:hover {
+    background-color: #ffcc00; /* White background color on hover */
+    border: 2px solid black;
+    transform: translate(-2px, -2px); /* Move button up and left on hover */
+    box-shadow: 4px 4px 0px 0px black; /* Adjust shadow on hover */
+}
+
+.footer-feedback-input .btn i {
+    margin-left: 5px; /* Add some space between the text and the icon */
+}
