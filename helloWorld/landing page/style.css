@@ -20,13 +20,13 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1% 5%;
-    background-color: #008080; /* Teal background color */
+    background-color: #ADD8E6; /* Teal background color */
     box-shadow: 6px 6px 0px 0px black; /* Add shadow for 3D effect */   
 }
 
 .nav-con-1 p {
     font-size: 1.5rem;
-    color: white;
+    color: black;
     font-weight: 800;
 }
 
@@ -43,7 +43,7 @@ body {
 
 .nav-con-2 ul li a{
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 20px;
     transition: color 0.3s;
 }

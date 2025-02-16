@@ -1,71 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>researcherDashboard</title>
 
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/befdb26257.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    
-<!-- navbar -->
 
-<div class="navBar">
+    <div class="background"></div>
 
-    <div class="logo">LOGO</div>
+    <!-- navbar -->
 
-    <div class="pfpDiv"></div>
+    <div class="navBar">
 
-
-</div>
-
-
-<!-- dashboard -->
+        <div class="logo">KAMI</div>
+        <div class="navi">
+            <div class="pfpDiv"><i class="fa-solid fa-house"></i></div>
+            <div class="pfpDiv"><i class="fa-solid fa-user"></i></div>
+        </div>
 
 
-<div class="dashboardContainer">
-
-    <div class="dashboardNav">
-            <button onclick="showList('startup')">Show Startup</button>
-            <button onclick="showList('mentor')">Show Mentor</button>
-            <button onclick="showList('investor')">Show Investor</button>
     </div>
 
 
-    <div id="researcher-list" class="researcher-container"></div>
+    <!-- dashboard -->
 
-    <script>
-        function showList(type) {
-            const colors = { startup: 'startup-card', mentor: 'mentor-card', investor: 'investor-card' };
-            const researchers = [
-                { name: "John Doe", patents: 5, ongoing: 2, wantsFunding: true, type: "startup" },
-                { name: "Jane Smith", patents: 3, ongoing: 4, wantsFunding: false, type: "mentor" },
-                { name: "Alice Brown", patents: 2, ongoing: 1, wantsFunding: true, type: "investor" }
-            ];
-            
-            const listContainer = document.getElementById("researcher-list");
-            listContainer.innerHTML = "";
-            
-            researchers.filter(r => r.type === type).forEach(researcher => {
-                const card = `
-                    <div class="researcher-card ${colors[type]}">
-                        <img class="profile-pic" src="default-pfp.png" alt="${researcher.name}" />
-                        <div class="card-info">
-                            <h3>${researcher.name}</h3>
-                            <p>Patents: ${researcher.patents}</p>
-                            <p>Ongoing Researches: ${researcher.ongoing}</p>
+
+    <div class="dashboardContainer">
+
+        <div class="dashboardNav">
+            <button onclick="showList('startup')">Show Startup</button>
+            <button onclick="showList('mentor')">Show Mentor</button>
+            <button onclick="showList('investor')">Show Investor</button>
+        </div>
+
+
+        <div id="researcher-list" class="researcher-container"></div>
+
+        <script>
+            function showList(type) {
+                const colors = { startup: 'startup-card', mentor: 'mentor-card', investor: 'investor-card' };
+                const researchers = [
+                    { name: "John Doe", description: "Innovative startup founder", patents: 5, ongoing: 2, wantsFunding: true, type: "startup" },
+                    { name: "Jane Smith", description: "Experienced mentor", patents: 3, ongoing: 4, wantsFunding: false, type: "mentor" },
+                    { name: "Alice Brown", description: "Investor looking for opportunities", patents: 2, ongoing: 1, wantsFunding: true, type: "investor" }
+                ];
+
+                const listContainer = document.getElementById("researcher-list");
+                listContainer.innerHTML = "";
+                listContainer.style.display = "grid";
+                listContainer.style.gridTemplateColumns = "repeat(auto-fit, minmax(250px, 1fr))";
+                listContainer.style.gap = "16px";
+
+                researchers.filter(r => r.type === type).forEach(researcher => {
+                    const card = `
+            <div class="profileCard ${colors[type]}">
+                <div class="pfp"></div>
+                <div class="content">
+                    <div class="name">${researcher.name}</div>
+                    <div class="profileDescription">${researcher.description}</div>
+                    <div class="extraContent">
+                        <div class="patent">
+                            <div class="patentNumber">${researcher.patents}</div>
+                            <div class="patentTitle">Patent</div>
                         </div>
-                        ${researcher.wantsFunding ? '<span class="funding-badge">Funding Needed</span>' : ''}
+                        <div class="extraField">
+                            <div class="fieldNumber">${researcher.ongoing}</div>
+                            <div class="fieldTitle">Ongoing Researches</div>
+                        </div>
                     </div>
-                `;
-                listContainer.innerHTML += card;
-            });
-        }
-    </script>
-</div>
+                    <div class="interactiveButtons">
+                        <button class="viewProfileBtn">View Profile</button>
+                        <button class="connectBtn">Connect</button>
+                    </div>
+                </div>
+            </div>
+        `;
+                    listContainer.innerHTML += card;
+                });
+            }
+
+        </script>
+    </div>
 
 
 
 </body>
+
 </html>
