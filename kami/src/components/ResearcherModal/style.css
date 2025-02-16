@@ -1,0 +1,23 @@
+@keyframes modalOpen {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .animate-modalOpen {
+    animation: modalOpen 0.3s ease-out;
+  }
+  
+  /* Add to your existing profileCard styles */
+  .profileCard img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--color-scheme);
+  }

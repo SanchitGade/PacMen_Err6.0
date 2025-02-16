@@ -45,7 +45,7 @@ const researcherSchema = new mongoose.Schema({
       description: { type: String }, // Description of the funding request
       status: {
         type: String,
-        enum: ["pending", "approved", "rejected"],
+        enum: ["Pending", "Approved", "Rejected"],
         default: "pending",
       }, // Status of the funding request
       requestedAt: { type: Date, default: Date.now }, // Date of the funding request

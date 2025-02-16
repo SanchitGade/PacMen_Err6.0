@@ -1,23 +1,24 @@
-// app/api/researchers/route.js
 import dbConnect from "@/lib/dbConnect";
 import Researcher from "@/models/researcherSchema";
 import { NextResponse } from "next/server";
 
-export async function POST(req) {
-  await dbConnect();
-
+export async function GET() {
   try {
-    const body = await req.json();
-    const researcher = new Researcher(body);
-    await researcher.save();
+    await dbConnect();
+    const researchers = await Researcher.find({}).lean();
+    
+    if (!researchers) {
+      return NextResponse.json(
+        { error: "No researchers found" },
+        { status: 404 }
+      );
+    }
 
-    return NextResponse.json(
-      { message: "Researcher data added successfully" },
-      { status: 201 }
-    );
+    return NextResponse.json(researchers, { status: 200 });
   } catch (error) {
+    console.error("Database error:", error);
     return NextResponse.json(
-      { error: "Failed to add researcher", details: error.message },
+      { error: "Failed to fetch researchers", details: error.message },
       { status: 500 }
     );
   }

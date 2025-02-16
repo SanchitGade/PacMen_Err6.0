@@ -1,23 +1,23 @@
-// app/api/entrepreneurs/route.js
 import dbConnect from "@/lib/dbConnect";
 import Entrepreneur from "@/models/entrepreneurSchema";
 import { NextResponse } from "next/server";
 
-export async function POST(req) {
-  await dbConnect();
-
+export async function GET() {
   try {
-    const body = await req.json();
-    const entrepreneur = new Entrepreneur(body);
-    await entrepreneur.save();
+    await dbConnect();
+    const startups = await Entrepreneur.find({
+      "startupDetails.name": { $exists: true },
+    }).lean();
 
-    return NextResponse.json(
-      { message: "Entrepreneur data added successfully" },
-      { status: 201 }
-    );
+    if (!startups.length) {
+      return NextResponse.json({ error: "No startups found" }, { status: 404 });
+    }
+
+    return NextResponse.json(startups, { status: 200 });
   } catch (error) {
+    console.error("Database error:", error);
     return NextResponse.json(
-      { error: "Failed to add entrepreneur", details: error.message },
+      { error: "Failed to fetch startups", details: error.message },
       { status: 500 }
     );
   }

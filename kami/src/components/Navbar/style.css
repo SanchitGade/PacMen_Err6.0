@@ -1,0 +1,64 @@
+.navBar {
+    box-sizing: border-box;
+    width: 95%;
+    max-width: 1400px;
+    border-radius: var(--border-radius);
+    background-color: white;
+    padding: 1rem 2rem;
+    margin: 1.5rem auto;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: "Righteous", cursive;
+    font-size: 2.5rem;
+    color: var(--color-scheme);
+}
+
+.navi {
+    display: flex;
+    gap: 1rem;
+}
+
+.pfpDiv {
+    height: 3rem;
+    width: 3rem;
+    border: 2px solid var(--color-scheme);
+    border-radius: 50%;
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    color: var(--color-scheme);
+    text-decoration: none; /* Ensure links don't have underlines */
+}
+
+.pfpDiv:hover {
+    background-color: var(--color-scheme);
+    color: teal;
+    border: solid;
+    border-color: teal;
+    border-width: 1px;
+}
+
+/* Dashboard */
+.dashboardContainer {
+    box-sizing: border-box;
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: calc(100vh - 150px);
+}
+
+.dashboardContainer h2 {
+    color: #333;
+    margin-bottom: 2rem;
+    font-size: 1.875rem;
+    font-weight: 600;
+}
